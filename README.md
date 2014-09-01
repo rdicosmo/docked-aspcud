@@ -7,7 +7,7 @@ aspcud replacement script that calls a native aspcud inside a docker image
 Rationale
 ---------
 
-It is sometimes difficult to easily get a recent enough version of the [`aspcud`]
+It is sometimes difficult to easily get a recent enough version of the `aspcud`
 dependency solver, which is needed for modern modular package managers like Opam.
 
 If space is not an issue for you, it is possible to use a dockerised version of
@@ -18,7 +18,7 @@ are using.
 Usage
 -----
 
-Just install the provided [`aspcud`] script in your path.
+Just install the provided `aspcud` script in your path.
 
 ### Remarks
 
