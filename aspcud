@@ -1,0 +1,23 @@
+#!/bin/sh
+cudfpn=$1
+cudf=`basename $cudfpn`
+solutionpn=$2
+solution=`basename $solutionpn`
+criteria=$3
+volume=/tmp/aspcudwrapper.$$
+
+if [ ! -d $volume ]; then
+  mkdir -p $volume
+fi
+
+cp $cudfpn $volume/$cudf
+
+sudo docker run -v $volume:/mnt/cudf -i rdicosmo/aspcud:v1 aspcud /mnt/cudf/$cudf /mnt/cudf/$solution "$criteria"
+
+cp $volume/$solution $solutionpn
+
+# cleanup
+
+rm -f $volume/$solution $volume/$cudf
+
+
